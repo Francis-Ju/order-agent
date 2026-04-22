@@ -10,7 +10,7 @@
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "dev:client": "vite",
     "dev:server": "sh -c 'set -a && . .env.local && set +a && tsx watch server/index.ts'",
-    "build": "vite build && tsc -p tsconfig.server.json && mkdir -p dist-server/data && cp server/data/*.json dist-server/data/",
+    "build": "vite build && tsc -p tsconfig.server.json && mkdir -p dist-server/data && cp server/data/*.json dist-server/data/ && echo 'Build complete'",
     "start": "NODE_ENV=production node dist-server/index.js",
     "seed": "tsx server/data/seed.ts"
   },

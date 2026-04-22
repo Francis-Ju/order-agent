@@ -30,9 +30,7 @@ app.get('/api/health', (_req, res) => {
 })
 
 // Serve the Vite-built frontend in production
-const distPath = IS_PROD
-  ? join(__dirname, '..', 'dist')
-  : join(__dirname, '..', 'dist')
+const distPath = join(__dirname, '..', 'dist-client')
 
 if (IS_PROD && existsSync(distPath)) {
   app.use(express.static(distPath))
